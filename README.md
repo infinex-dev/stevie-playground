@@ -1,14 +1,20 @@
 # stevie-playground
-Playground/test bed repo for Stevie agent framework
 
-## Completed Agent Work Items
+A small TypeScript library of formatting utilities. Used as a smoke fixture for the
+[Stevie](https://github.com/infinex-xyz/stevie) agent framework.
 
-- work-45: core-flow-e2e (1778814707)
-- work-46: core-flow-e2e (1778827361)
+## Modules
 
-core e2e flow 2026-05-22 yamen 4
-ack
-core e2e multitask task 1 edit 2026-05-22 yamen 5
-core e2e multitask task 2 edit 2026-05-22 yamen 5
-core e2e flow task 1 2026-05-23 yamen 6 ack
-core e2e flow task 2 2026-05-23 yamen 6 ack
+- `slugify` — convert a string to a URL-safe slug.
+- `currency` — format and parse currency amounts (`USD 12.34`).
+- `time` — format ISO timestamps and produce relative-time strings.
+- `bytes` — format and parse byte counts (`1.5 MB`).
+
+## Quickstart
+
+```sh
+pnpm install
+pnpm test
+```
+
+See `AGENTS.md` for contributor conventions.
