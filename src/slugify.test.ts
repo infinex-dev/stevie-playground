@@ -17,4 +17,10 @@ describe("slugify", () => {
   test("trims leading and trailing hyphens", () => {
     expect(slugify("---hello---")).toBe("hello");
   });
+
+  test("applies Turkish lowercasing rules with tr-TR locale", () => {
+    // İ (U+0130 Latin Capital Letter I With Dot Above) should become i in Turkish
+    // Default behavior would lowercase İ to i̇ (i + combining dot above)
+    expect(slugify("İSTANBUL", { locale: "tr-TR" })).toBe("istanbul");
+  });
 });
