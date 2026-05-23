@@ -17,6 +17,10 @@ describe("formatBytes", () => {
   test("throws on negative input", () => {
     expect(() => formatBytes(-1)).toThrow();
   });
+
+  test("formats with German locale using comma as decimal separator", () => {
+    expect(formatBytes(1_500_000, { locale: "de-DE" })).toBe("1,5 MB");
+  });
 });
 
 describe("parseBytes", () => {
@@ -30,5 +34,15 @@ describe("parseBytes", () => {
 
   test("throws on malformed input", () => {
     expect(() => parseBytes("foo")).toThrow();
+  });
+
+  test("parses German locale format with comma as decimal separator", () => {
+    expect(parseBytes("1,5 MB")).toBe(1_500_000);
+    expect(parseBytes("1,5 MB", { locale: "de-DE" })).toBe(1_500_000);
+  });
+
+  test("both dot and comma formats parse to same value regardless of locale", () => {
+    expect(parseBytes("1.5 MB")).toBe(parseBytes("1,5 MB"));
+    expect(parseBytes("1.5 MB", { locale: "de-DE" })).toBe(parseBytes("1,5 MB", { locale: "de-DE" }));
   });
 });
