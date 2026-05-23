@@ -25,4 +25,20 @@ describe("relativeTime", () => {
   test("returns days for longer deltas", () => {
     expect(relativeTime(new Date(now.getTime() - 2 * 24 * 60 * 60_000), now)).toBe("2 days ago");
   });
+
+  test("returns Spanish string when locale is 'es-ES'", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, { locale: "es-ES" })).toBe("hace 5 minutos");
+  });
+
+  test("returns default English when options is empty object", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, {})).toBe("5 minutes ago");
+  });
+
+  test("returns default English when locale is empty string", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, { locale: "" })).toBe("5 minutes ago");
+  });
+
+  test("returns default English when locale is unknown", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, { locale: "xx-XX" })).toBe("5 minutes ago");
+  });
 });
