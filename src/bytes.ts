@@ -1,6 +1,8 @@
+import { LocaleOptions } from "./locale.ts";
+
 const UNITS = ["B", "KB", "MB", "GB", "TB", "PB"] as const;
 
-export function formatBytes(bytes: number): string {
+export function formatBytes(bytes: number, options?: LocaleOptions): string {
   if (bytes < 0) {
     throw new Error("bytes must be non-negative");
   }
@@ -14,11 +16,21 @@ export function formatBytes(bytes: number): string {
     i += 1;
   }
   const rounded = Math.round(value * 10) / 10;
-  return `${rounded} ${UNITS[i]}`;
+  
+  // Use German decimal separator (comma) for de-DE locale
+  const useGermanLocale = options?.locale === "de-DE";
+  const formattedValue = useGermanLocale
+    ? String(rounded).replace(".", ",")
+    : String(rounded);
+  
+  return `${formattedValue} ${UNITS[i]}`;
 }
 
-export function parseBytes(input: string): number {
-  const match = input.trim().match(/^(\d+(?:\.\d+)?)\s*([KMGTP]?B)$/i);
+export function parseBytes(input: string, options?: LocaleOptions): number {
+  // Normalize the input: replace comma with dot to handle both decimal separators
+  const normalizedInput = input.trim().replace(",", ".");
+  
+  const match = normalizedInput.match(/^(\d+(?:\.\d+)?)\s*([KMGTP]?B)$/i);
   if (!match) {
     throw new Error(`invalid bytes string: ${input}`);
   }

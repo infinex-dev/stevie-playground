@@ -32,3 +32,25 @@ describe("parseBytes", () => {
     expect(() => parseBytes("foo")).toThrow();
   });
 });
+
+describe("German locale (de-DE)", () => {
+  test("formatBytes uses comma as decimal separator for de-DE", () => {
+    expect(formatBytes(1_500_000, { locale: "de-DE" })).toBe("1,5 MB");
+  });
+
+  test("parseBytes is locale-tolerant and parses comma decimal", () => {
+    // Both comma and dot decimal separators should parse to the same value
+    expect(parseBytes("1,5 MB")).toBe(1_500_000);
+    expect(parseBytes("1.5 MB")).toBe(1_500_000);
+    expect(parseBytes("1,5 MB", { locale: "de-DE" })).toBe(1_500_000);
+    expect(parseBytes("1.5 MB", { locale: "de-DE" })).toBe(1_500_000);
+  });
+
+  test("formatBytes differs between default and de-DE locale", () => {
+    const defaultFormatted = formatBytes(1_500_000);
+    const germanFormatted = formatBytes(1_500_000, { locale: "de-DE" });
+    expect(defaultFormatted).toBe("1.5 MB");
+    expect(germanFormatted).toBe("1,5 MB");
+    expect(defaultFormatted).not.toBe(germanFormatted);
+  });
+});
