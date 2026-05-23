@@ -14,4 +14,4 @@ core e2e flow task 1 2026-05-23 yamen 6 ack
 core e2e flow task 2 2026-05-23 yamen 6 ack
 core e2e flow task 1 2026-05-23 yamen 6
 
-core e2e flow task 2 2026-05-23 yamen 6
+core e2e flow task 2 2026-05-23 yamen 6 ack
