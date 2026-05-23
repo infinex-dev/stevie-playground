@@ -25,4 +25,24 @@ describe("relativeTime", () => {
   test("returns days for longer deltas", () => {
     expect(relativeTime(new Date(now.getTime() - 2 * 24 * 60 * 60_000), now)).toBe("2 days ago");
   });
+
+  test("returns Spanish string with es-ES locale", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, { locale: "es-ES" })).toBe("hace 5 minutos");
+  });
+
+  test("returns default behavior for undefined options", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, undefined)).toBe("5 minutes ago");
+  });
+
+  test("returns default behavior for empty options", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, {})).toBe("5 minutes ago");
+  });
+
+  test("returns default behavior for empty locale string", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, { locale: "" })).toBe("5 minutes ago");
+  });
+
+  test("returns default behavior for unknown locale", () => {
+    expect(relativeTime(new Date(now.getTime() - 5 * 60_000), now, { locale: "xx-XX" })).toBe("5 minutes ago");
+  });
 });
