@@ -22,4 +22,4 @@ See `AGENTS.md` for contributor conventions.
 core e2e flow task 1 2026-05-24 claude refactor
 core e2e flow task 2 2026-05-24 claude refactor ack
 
-shakeout test 1
+shakeout test 1 ack
