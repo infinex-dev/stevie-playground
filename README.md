@@ -24,4 +24,4 @@ core e2e flow task 2 2026-05-24 claude refactor ack
 
 shakeout test 1 ack
 
-hello world
+hello world ack
