@@ -3,6 +3,10 @@
 A small TypeScript library of formatting utilities. Used as a smoke fixture for the
 [Stevie](https://github.com/infinex-xyz/stevie) agent framework.
 
+## Hello
+
+Welcome to stevie-playground!
+
 ## Modules
 
 - `slugify` — convert a string to a URL-safe slug.
