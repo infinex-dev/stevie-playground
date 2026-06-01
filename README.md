@@ -29,3 +29,6 @@ hello world ack
 task 1
 
 task 2 ack
+
+core e2e flow task 1 2026-06-01 1
+core e2e flow task 2 2026-06-01 1
