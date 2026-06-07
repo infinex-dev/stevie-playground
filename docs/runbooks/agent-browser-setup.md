@@ -1,6 +1,6 @@
 # Runbook: agent-browser setup for the Stevie web UI
 
-This runbook documents how to get [`agent-browser`](https://github.com/) — the Chrome-automation
+This runbook documents how to get `agent-browser` — the Chrome-automation
 CLI (v0.27.0, bundling **Chrome for Testing 149**) — driving the Stevie web UI at
 **https://stevie.localhost:3443** on three platforms:
 
