@@ -1,7 +1,8 @@
 # stevie-playground
 
-A small TypeScript library of formatting utilities. Used as a smoke fixture for the
-[Stevie](https://github.com/infinex-xyz/stevie) agent framework.
+## Hello
+
+Welcome to the stevie-playground repository!
 
 ## Modules
 
