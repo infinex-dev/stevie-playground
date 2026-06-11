@@ -4,9 +4,6 @@
 
 Welcome to the stevie-playground repository!
 
-A small TypeScript library of formatting utilities. Used as a smoke fixture for the
-[Stevie](https://github.com/infinex-xyz/stevie) agent framework.
-
 ## Modules
 
 - `slugify` — convert a string to a URL-safe slug.
