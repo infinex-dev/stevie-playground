@@ -1,5 +1,9 @@
 # stevie-playground
 
+## Hello
+
+Hello and welcome to stevie-playground!
+
 A small TypeScript library of formatting utilities. Used as a smoke fixture for the
 [Stevie](https://github.com/infinex-xyz/stevie) agent framework.
 
