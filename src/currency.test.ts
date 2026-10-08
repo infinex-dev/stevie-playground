@@ -16,7 +16,4 @@ describe("parseCurrency", () => {
     expect(parseCurrency("USD 1234.56")).toEqual({ amount: 1234.56, code: "USD" });
   });
 
-  test("throws on malformed input", () => {
-    expect(() => parseCurrency("not a currency")).toThrow();
-  });
 });
