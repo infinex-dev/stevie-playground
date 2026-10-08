@@ -9,3 +9,4 @@
 - Restart test, second push.
 - Restart test, third push.
 - cancel one
+- cancel two
