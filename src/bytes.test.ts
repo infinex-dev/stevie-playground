@@ -10,6 +10,10 @@ describe("formatBytes", () => {
     expect(formatBytes(1_500_000)).toBe("1.5 MB");
   });
 
+  test("formats KB with one decimal", () => {
+    expect(formatBytes(1_250)).toBe("1.3 KB");
+  });
+
   test("scales up to GB", () => {
     expect(formatBytes(2_000_000_000)).toBe("2 GB");
   });
