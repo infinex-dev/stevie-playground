@@ -1,0 +1,25 @@
+# Release notes
+
+- Formatting of byte sizes now rounds to one decimal place.
+- Fixed the date format in the changelog header.
+- Noted the playground move to the new reviewer.
+- Linked the reviewer guide.
+- Spelling fixes.
+- Restart test, first push.
+- Restart test, second push.
+- Restart test, third push.
+- cancel one
+- cancel two
+- burst one
+- burst two
+- burst three
+- unlabel one
+- eve-native T1 a
+- eve-native T1 b
+- eve-native T2 burst 1
+- eve-native T2 burst 2
+- eve-native T2 burst 3
+- eve-native T4 human
+- eve-native T4 bot push
+- eve-native T3 human
+- eve-native T5 restart
