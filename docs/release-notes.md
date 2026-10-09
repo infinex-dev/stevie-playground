@@ -19,3 +19,4 @@
 - eve-native T2 burst 1
 - eve-native T2 burst 2
 - eve-native T2 burst 3
+- eve-native T4 human
