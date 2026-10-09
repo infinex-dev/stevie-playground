@@ -20,3 +20,4 @@
 - eve-native T2 burst 2
 - eve-native T2 burst 3
 - eve-native T4 human
+- eve-native T4 bot push
