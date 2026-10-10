@@ -18,6 +18,10 @@ describe("formatBytes", () => {
     expect(formatBytes(1_000)).toBe("1 KB");
   });
 
+  test("scales up to TB", () => {
+    expect(formatBytes(3_000_000_000_000)).toBe("3 TB");
+  });
+
   test("scales up to GB", () => {
     expect(formatBytes(2_000_000_000)).toBe("2 GB");
   });
