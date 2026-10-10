@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { formatCurrency, parseCurrency } from "./currency.ts";
+import { formatCurrency, parseCurrency, sumCurrency } from "./currency.ts";
 
 describe("formatCurrency", () => {
   test("formats amount with two decimal places", () => {
@@ -18,5 +18,11 @@ describe("parseCurrency", () => {
 
   test("throws on malformed input", () => {
     expect(() => parseCurrency("not a currency")).toThrow();
+  });
+});
+
+describe("sumCurrency", () => {
+  test("sums amounts", () => {
+    expect(sumCurrency(["USD 1.50", "USD 2.25"])).toBe("USD 3.75");
   });
 });
