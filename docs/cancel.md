@@ -1,1 +1,1 @@
-cancel test A 18:46:24
+cancel test B 18:46:27
